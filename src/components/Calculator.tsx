@@ -1,0 +1,70 @@
+import { useState } from 'react'
+import './Components.css'
+
+export interface CalculatorProps {
+  /** 初期値 */
+  initialValue?: number
+  /** x2ボタンがクリックされた時のコールバック */
+  onMultiplyBy2?: (value: number) => void
+  /** x3ボタンがクリックされた時のコールバック */
+  onMultiplyBy3?: (value: number) => void
+}
+
+const Calculator = ({ 
+  initialValue = 0, 
+  onMultiplyBy2, 
+  onMultiplyBy3 
+}: CalculatorProps) => {
+  const [value, setValue] = useState(initialValue)
+
+  const handleMultiplyBy2 = () => {
+    const newValue = value * 2
+    setValue(newValue)
+    onMultiplyBy2?.(newValue)
+  }
+
+  const handleMultiplyBy3 = () => {
+    const newValue = value * 3
+    setValue(newValue)
+    onMultiplyBy3?.(newValue)
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(e.target.value) || 0
+    setValue(newValue)
+  }
+
+  return (
+    <div className="calculator">
+      <h2>Calculator</h2>
+      <div className="calculator-content">
+        <input
+          type="number"
+          value={value}
+          onChange={handleInputChange}
+          placeholder="数値を入力してください"
+          data-testid="calculator-input"
+        />
+        <div className="button-group">
+          <button
+            onClick={handleMultiplyBy2}
+            data-testid="multiply-by-2-button"
+          >
+            x2
+          </button>
+          <button
+            onClick={handleMultiplyBy3}
+            data-testid="multiply-by-3-button"
+          >
+            x3
+          </button>
+        </div>
+        <div className="result" data-testid="calculator-result">
+          結果: {value}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Calculator
