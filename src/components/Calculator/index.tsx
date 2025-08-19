@@ -7,7 +7,7 @@ export interface CalculatorProps {
   initialValue?: number;
 }
 
-const isFixed = true;
+const isFixed = false;
 
 const Calculator = ({ initialValue = 0 }: CalculatorProps) => {
   const [value, setValue] = useState(initialValue);
