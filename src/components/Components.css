@@ -25,6 +25,14 @@
   font-size: 16px;
 }
 
+.calculator .is-fixed {
+  height: 40px;
+
+  & > button {
+    position: absolute;
+  }
+}
+
 .button-group {
   display: flex;
   gap: 10px;
