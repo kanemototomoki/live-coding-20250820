@@ -1,5 +1,5 @@
 import Calculator from './components/Calculator'
-import DragAndDrop from './components/DragAndDrop'
+import DragAndDrop from './components/Dnd'
 import './App.css'
 import './components/Components.css'
 

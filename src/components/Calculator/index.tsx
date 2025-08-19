@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Components.css'
+import '../Components.css'
 
 export interface CalculatorProps {
   /** 初期値 */
