@@ -4,29 +4,21 @@ import './Components.css'
 export interface CalculatorProps {
   /** 初期値 */
   initialValue?: number
-  /** x2ボタンがクリックされた時のコールバック */
-  onMultiplyBy2?: (value: number) => void
-  /** x3ボタンがクリックされた時のコールバック */
-  onMultiplyBy3?: (value: number) => void
 }
 
-const Calculator = ({ 
-  initialValue = 0, 
-  onMultiplyBy2, 
-  onMultiplyBy3 
+const Calculator = ({
+  initialValue = 0,
 }: CalculatorProps) => {
   const [value, setValue] = useState(initialValue)
 
   const handleMultiplyBy2 = () => {
     const newValue = value * 2
     setValue(newValue)
-    onMultiplyBy2?.(newValue)
   }
 
   const handleMultiplyBy3 = () => {
     const newValue = value * 3
     setValue(newValue)
-    onMultiplyBy3?.(newValue)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,9 +50,6 @@ const Calculator = ({
           >
             x3
           </button>
-        </div>
-        <div className="result" data-testid="calculator-result">
-          結果: {value}
         </div>
       </div>
     </div>
