@@ -25,12 +25,8 @@
   font-size: 16px;
 }
 
-.calculator .is-fixed {
-  height: 40px;
-
-  & > button {
-    position: absolute;
-  }
+.calculator .is-hidden {
+  visibility: hidden;
 }
 
 .button-group {
