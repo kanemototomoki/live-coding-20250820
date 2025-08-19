@@ -1,76 +1,77 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "live-coding-20250820",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-	"runArgs": ["--name", "live-coding-20250820"],
+  "name": "live-coding-20250820",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "runArgs": ["--name", "live-coding-20250820"],
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "npm install",
 
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				// TypeScript
-				"ms-vscode.vscode-typescript-next",
-				
-				// React Development
-				"dsznajder.es7-react-js-snippets",
-				"ms-vscode.vscode-react-refactor",
-				
-				// Code Quality & Formatting
-				"esbenp.prettier-vscode",
-				"dbaeumer.vscode-eslint",
-				
-				// HTML/CSS
-				"formulahendry.auto-rename-tag",
-				"bradlc.vscode-tailwindcss",
-				
-				// Git
-				"eamodio.gitlens",
-				
-				// Utilities
-				"ms-vscode.vscode-json",
-				"christian-kohler.path-intellisense",
-				"ms-vscode.vscode-npm-script",
-				
-				// Theme & UI
-				"pkief.material-icon-theme",
-				"ms-vscode.vscode-typescript-next"
-			],
-			"settings": {
-				"terminal.integrated.defaultProfile.linux": "zsh",
-				"editor.formatOnSave": true,
-				"editor.defaultFormatter": "esbenp.prettier-vscode",
-				"editor.codeActionsOnSave": {
-					"source.fixAll.eslint": "explicit"
-				},
-				"typescript.preferences.quoteStyle": "single",
-				"javascript.preferences.quoteStyle": "single",
-				"emmet.includeLanguages": {
-					"javascript": "javascriptreact",
-					"typescript": "typescriptreact"
-				}
-			}
-		}
-	},
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // TypeScript
+        "ms-vscode.vscode-typescript-next",
 
-	// Port attributes for better development experience
-	"portsAttributes": {
-		"3000": {
-			"label": "Development Server",
-			"onAutoForward": "openBrowser"
-		}
-	},
+        // React Development
+        "dsznajder.es7-react-js-snippets",
+        "ms-vscode.vscode-react-refactor",
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+        // Code Quality & Formatting
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+
+        // HTML/CSS
+        "formulahendry.auto-rename-tag",
+        "bradlc.vscode-tailwindcss",
+
+        // Git
+        "eamodio.gitlens",
+
+        // Utilities
+        "ms-vscode.vscode-json",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-npm-script",
+        "oderwat.indent-rainbow",
+
+        // Theme & UI
+        "pkief.material-icon-theme",
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "typescript.preferences.importModuleSpecifier": "relative"
+      }
+    }
+  },
+
+  // Port attributes for better development experience
+  "portsAttributes": {
+    "3000": {
+      "label": "Development Server",
+      "onAutoForward": "openBrowser"
+    }
+  }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
