@@ -1,10 +1,20 @@
-## テスティングトロフィー
+## 概要
+フロントエンドのテスト戦略について
 
-- E2E
-  - praywrightによるテスト
-- integration
-  - Storybookによるテスト
-- Unit
-  - vitestによるテスト
-- Static
-  - typescriptによる静的解析
+## 用語
+- テスティングトロフィー
+  - E2E(end-to-end)
+  - integration
+  - Unit
+  - Static
+
+### 使用したライブラリ・ツールなど
+- docker
+- devcontainer
+- vite
+- vitest
+- react
+- storybook
+- typescript
+- praywright
+- testing-library

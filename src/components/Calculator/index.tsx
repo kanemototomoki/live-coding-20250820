@@ -5,11 +5,11 @@ import { multiplyBy2, multiplyBy3 } from './utils';
 export interface CalculatorProps {
   /** 初期値 */
   initialValue?: number;
+  /** x3ボタンを非表示にするか */
+  isHiddenMultiplyBy3?: boolean;
 }
 
-const isFixed = false;
-
-const Calculator = ({ initialValue = 0 }: CalculatorProps) => {
+const Calculator = ({ initialValue = 0, isHiddenMultiplyBy3 = false }: CalculatorProps) => {
   const [value, setValue] = useState(initialValue);
 
   const handleMultiplyBy2 = () => {
@@ -38,7 +38,7 @@ const Calculator = ({ initialValue = 0 }: CalculatorProps) => {
           placeholder="数値を入力してください"
           data-testid="calculator-input"
         />
-        <div className={`button-group ${isFixed ? 'is-fixed' : ''}`.trim()}>
+        <div className={'button-group'}>
           <button
             onClick={handleMultiplyBy2}
             data-testid="multiply-by-2-button"
@@ -48,6 +48,7 @@ const Calculator = ({ initialValue = 0 }: CalculatorProps) => {
           <button
             onClick={handleMultiplyBy3}
             data-testid="multiply-by-3-button"
+            className={isHiddenMultiplyBy3 ? 'is-hidden' : ''}
           >
             x3
           </button>
