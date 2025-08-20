@@ -2,6 +2,18 @@
 フロントエンドのテスト戦略について。  
 ユニットテスト・インテグレーションテストを実装してみる。
 
+## 必須ツール
+- docker
+- vscode
+- vscode拡張のdevcontainer
+  - https://code.visualstudio.com/docs/devcontainers/tutorial#_install-the-extension
+
+## ライブコーディングの流れ
+- 環境構築
+- テスト戦略の説明
+- ユニットテストの実装
+- インテグレーションテストの実装
+
 ## テスト戦略
 - テストピラミッド
 - テスティングトロフィー
