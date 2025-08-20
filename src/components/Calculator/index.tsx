@@ -9,6 +9,12 @@ export interface CalculatorProps {
   isHiddenMultiplyBy3?: boolean;
 }
 
+/**
+ * @desc 仕様
+ * - 入力欄があり、数値を入力できる
+ * - x2ボタンを押すと、入力値に2を掛け、その結果を表示する
+ * - x3ボタンを押すと、入力値に3を掛け、その結果を表示する
+ */
 const Calculator = ({ initialValue = 0, isHiddenMultiplyBy3 = false }: CalculatorProps) => {
   const [value, setValue] = useState(initialValue);
 
