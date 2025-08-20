@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../Components.css';
 import { multiplyBy2, multiplyBy3 } from './utils';
 
-export interface CalculatorProps {
+interface CalculatorProps {
   /** 初期値 */
   initialValue?: number;
   /** x3ボタンを非表示にするか */
