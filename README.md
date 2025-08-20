@@ -7,14 +7,17 @@
   - integration
   - Unit
   - Static
+- コンポーネントテスト
+- VRT(Visual Regression test)
+- a11y(Accessibility)
 
 ### 使用したライブラリ・ツールなど
 - docker
 - devcontainer
 - vite
 - vitest
+- testing-library
 - react
 - storybook
 - typescript
-- praywright
-- testing-library
+- playwright
